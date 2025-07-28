@@ -1,0 +1,22 @@
+{
+  "name": "notificador",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "rabbitmq:start": "docker run -d --hostname my-rabbit --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management",
+    "rabbitmq:stop": "docker stop rabbitmq && docker rm rabbitmq",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "amqplib": "^0.10.8",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  }
+}
